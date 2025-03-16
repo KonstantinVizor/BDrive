@@ -1,0 +1,8 @@
+add_subdirectory(./algorithms)
+add_subdirectory(./image)
+add_subdirectory(./visControls)
+add_subdirectory(./visPrimitives)
+add_subdirectory(./screenLayer)
+set(SOURCES "${SOURCES}" PARENT_SCOPE)
+set(INCLUDES "${INCLUDES}" PARENT_SCOPE)
+set(LINKS "${LINKS}" PARENT_SCOPE)

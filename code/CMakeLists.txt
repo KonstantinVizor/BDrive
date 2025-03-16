@@ -1,0 +1,5 @@
+add_subdirectory(./src)
+add_subdirectory(./tests)
+set(SOURCES "${SOURCES}" PARENT_SCOPE)
+set(INCLUDES "${INCLUDES}" PARENT_SCOPE)
+set(LINKS "${LINKS}" PARENT_SCOPE)
