@@ -12,7 +12,7 @@ jobs:
       
       - name: Install packages
         run: |
-          sudo apt install -y make cmake gcc doxygen ffmpeg
+          sudo apt install -y make cmake gcc doxygen ffmpeg openexr libjpeg8 opencolorio-tools libtiff
 
       - name: Build
         run: |
