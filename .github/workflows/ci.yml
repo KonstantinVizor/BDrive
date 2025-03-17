@@ -12,7 +12,7 @@ jobs:
       
       - name: Install packages
         run: |
-          sudo apt install -y make cmake gcc doxygen ffmpeg openexr libjpeg8 opencolorio-tools libtiff
+          sudo apt install -y make cmake gcc doxygen ffmpeg openexr libjpeg8 opencolorio-tools
 
       - name: Build
         run: |
