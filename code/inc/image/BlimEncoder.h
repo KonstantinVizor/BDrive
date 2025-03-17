@@ -4,7 +4,7 @@
 #include <string>
 #include "Image.h"
 #include "../algorithms/Haffman.h"
-#include "../../libs/bitIO/inc/BitWriter.h"
+//#include "../../libs/bitIO/inc/BitWriter.h"
 
 namespace BDrive
 {
@@ -16,8 +16,8 @@ namespace BDrive
 	{
 		private:
 			void _createAlphabets(const Image &image);
-			void _writeHeader(uint8_t headerString[5], uint16_t height, uint16_t width, BitWriter &writer) const;
-			void _writeData(const Image &image, BitWriter &writer) const;
+//			void _writeHeader(uint8_t headerString[5], uint16_t height, uint16_t width, BitWriter &writer) const;
+//			void _writeData(const Image &image, BitWriter &writer) const;
 
 			Haffman::Alphabet _rAlphabet;
 			Haffman::Alphabet _gAlphabet;

@@ -4,7 +4,7 @@
 #include <string>
 #include "Image.h"
 #include "../algorithms/Haffman.h"
-#include "../../libs/bitIO/inc/BitReader.h"
+//#include "../../libs/bitIO/inc/BitReader.h"
 
 namespace BDrive
 {
@@ -32,10 +32,10 @@ namespace BDrive
 			uint16_t _height;
 			uint16_t _width;
 
-			void _readHeader(BitReader &reader);
-			void _readAlphabet(std::map<uint8_t, uint64_t> &alphabet, uint16_t count, BitReader &reader);
-			Image _readImage(uint16_t height, uint16_t width, BitReader &reader);
-			uint8_t _readHaffmanCode(const std::map<uint8_t, uint64_t> &alphabet, BitReader &reader);
+//			void _readHeader(BitReader &reader);
+//			void _readAlphabet(std::map<uint8_t, uint64_t> &alphabet, uint16_t count, BitReader &reader);
+//			Image _readImage(uint16_t height, uint16_t width, BitReader &reader);
+////			uint8_t _readHaffmanCode(const std::map<uint8_t, uint64_t> &alphabet, BitReader &reader);
 
 		public:
 			BlimDecoder() = default;
