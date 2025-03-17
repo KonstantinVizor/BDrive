@@ -41,7 +41,7 @@ namespace Render
 			 * \param index Индекс контрола, который будет отрисован
 			 * \param layer Слой, из которого будет взят контрол
 			 */
-			virtual void render(const std::shared_ptr<Canvas> &canvas, uint32_t index, const ScreenLayer &layer) = 0;
+			virtual void render(Canvas &canvas, uint32_t index, ScreenLayer &layer) = 0;
 
 			/*! \details
 			 * Приводит объект к дочернему типу

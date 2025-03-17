@@ -76,19 +76,6 @@ BDrive::VisualControls::Button& BDrive::VisualControls::Button::setBackgoundTran
 	return *this;
 }
 
-BDrive::VisualControls::Button& BDrive::VisualControls::Button::setClickHandler(const ControlHandler &handler)
-{
-	_clickHandler = handler;
-	return *this;
-}
-
-void BDrive::VisualControls::Button::click(std::vector<std::shared_ptr<ScreenLayer>> &layers,
-					std::vector<std::shared_ptr<ScreenLayer>> &curLayers)
-{
-	_clickHandler(layers, curLayers);
-}
-
-
 const BDrive::VisualControls::Button& BDrive::VisualControls::Button::operator =(const Button &button)
 {
 	_x = button._x;

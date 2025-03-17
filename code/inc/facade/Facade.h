@@ -1,36 +1,50 @@
 #ifndef __FACADE_H__
 #define __FACADE_H__
 
-#include "../visPrimitives/Canvas.h"
-#include "../screenLayer/ScreenLayer.h"
-#include "../render/BaseRender.h"
+#include "Container.h"
 #include <memory>
-#include <map>
 
 namespace BDrive
 {
-	/// \todo
+	/// Класс, представляющий фасад для библиотеки BDrive
 	class Facade
 	{
 		private:
-			std::shared_ptr<Canvas> _canvas;
-			std::vector<std::shared_ptr<ScreenLayer>> _layers;
-			std::map<VisualControls::ControlType, std::shared_ptr<Render::BaseRender>> _renders;
-			std::vector<std::shared_ptr<ScreenLayer>> _curLayeres;
+			std::shared_ptr<Container> _container;
 		
 		public:
 			~Facade() = default;
-			Facade() = default;
+			Facade();
 			explicit Facade(const Facade &facade);
 			Facade(Facade &&facade);
 
-			Facade& setCanvas(const std::shared_ptr<Canvas> &canvas);
-			Facade& addLayer(const std::shared_ptr<ScreenLayer> &layer);
-			Facade& addRender(VisualControls::ControlType type, const std::shared_ptr<Render::BaseRender> &render);
+			/*! \details
+			 * Добавляет в массив слой
+			 * \rapam layer Слой 
+			 * \return Ссылку на себя
+			 */
+			Facade& addLayer(const ScreenLayer &layer);
 
-			void leftMouseClick();
-			void RightMouseClick();
-			void keyClick(uint8_t key);
+			/*! \details
+			 * Добавляет новый обработчик события
+			 * \rapam type Тип события
+			 * \rapam handler Обработчик события
+			 * \return Ссылку на себя
+			 */
+			Facade& addHandler(Events::EventType type,
+						const std::shared_ptr<EventHandler::BaseEventHandler> &handler);
+
+			/*! \details
+			 * Добавляет новый рендер
+			 * \rapam type Типа контрола
+			 * \rapam render Рендер
+			 * \return Ссылку на себя
+			 */
+			Facade& addRender(VisualControls::ControlType type,
+						const std::shared_ptr<Render::BaseRender> &render);
+
+			/// \details Запускает выполнение программы
+			void process();
 
 			const Facade& operator =(const Facade &facade);
 	};

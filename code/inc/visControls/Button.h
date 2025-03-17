@@ -5,7 +5,6 @@
 #include "../visPrimitives/Color.h"
 #include "../image/Image.h"
 #include <optional>
-#include <vector>
 
 namespace BDrive
 {
@@ -18,7 +17,6 @@ namespace VisualControls
 			uint8_t _backgroundTransparent;
 			std::optional<Color> _backgroundColor;
 			std::optional<Image> _backgroundImage;
-			ControlHandler _clickHandler;
 
 		public:
 			~Button() = default;
@@ -68,17 +66,6 @@ namespace VisualControls
 			 * \result Ссылку на себя
 			 */
 			Button& setBackgoundTransparent(uint8_t transparent);
-
-			/*! \details
-			 * Задает обработчик события "Нажание по кнопке"
-			 * \param handler Обработкие события
-			 * \result Ссылку на себя
-			 */
-			Button& setClickHandler(const ControlHandler &handler);
-
-			/// \details Вызывает событие "Нажатие по кнопке"
-			void click(std::vector<std::shared_ptr<ScreenLayer>> &layers,
-					std::vector<std::shared_ptr<ScreenLayer>> &curLayers);
 
 			const Button& operator =(const Button &button);
 	};

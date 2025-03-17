@@ -17,7 +17,7 @@ namespace Render
 			ButtonRender(ButtonRender &&render);
 
 			/// \details Является переопределением метода BaseRender::render
-			virtual void render(const std::shared_ptr<Canvas> &canvas, uint32_t index, const ScreenLayer &layer) override;
+			virtual void render(Canvas &canvas, uint32_t index, ScreenLayer &layer) override;
 
 			const ButtonRender& operator =(const ButtonRender &render);
 	};

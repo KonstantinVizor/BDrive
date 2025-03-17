@@ -16,6 +16,7 @@ namespace BDrive
 	{
 		private:
 			std::vector<std::shared_ptr<VisualControls::BaseControl>> _controls;
+			bool _isShowed;
 			uint16_t _width;
 			uint16_t _height;
 			uint16_t _xpos;
@@ -62,6 +63,16 @@ namespace BDrive
 
 			/// \details Возвращает положение слоя по вертикали
 			uint16_t getYpos() const;
+
+			/// \details Возвращает true, если слой показан. false иначе
+			bool isShowed() const;
+
+			/*! \details
+			 * Устанавливает флаг показа слоя
+			 * \param isShowed флаг показа слоя
+			 * \return Ссылку на себя
+			 */
+			ScreenLayer& setIsShowed(bool isShowed);
 
 			/*! \details
 			 * Задает ширину слоя

@@ -13,7 +13,7 @@ BDrive::Render::ButtonRender::ButtonRender(ButtonRender &&render) :
 						BaseRender(render._type)
 {}
 
-void BDrive::Render::ButtonRender::render(const std::shared_ptr<Canvas> &canvas, uint32_t index, const ScreenLayer &layer)
+void BDrive::Render::ButtonRender::render(Canvas &canvas, uint32_t index, ScreenLayer &layer)
 {
 	VisualControls::Button &button = layer.getControl(index)->cast<VisualControls::Button>();
 	Color color, bcolor;
@@ -21,9 +21,9 @@ void BDrive::Render::ButtonRender::render(const std::shared_ptr<Canvas> &canvas,
 	double u, v;
 	for (uint16_t i = 0; i < button.getHeight(); i++)
 		for (uint16_t j = 0; j < button.getWidth(); j++)
-			if (i < canvas->getHeight() && j < canvas->getWidth())
+			if (i < canvas.getHeight() && j < canvas.getWidth())
 			{
-				color = canvas->getPixel(i + button.getY(), j + button.getX());
+				color = canvas.getPixel(i + button.getY(), j + button.getX());
 				if (button.hasBackgroundImage())
 				{
 					u = (double)button.getHeight() / i;
@@ -34,7 +34,7 @@ void BDrive::Render::ButtonRender::render(const std::shared_ptr<Canvas> &canvas,
 					bcolor = button.getBackgroundColor();
 				alpha = bcolor.getAlpha() / 255.0;
 				color = (color * (1 - alpha)) + (bcolor * alpha);
-				canvas->setPixel(i + button.getY(), j + button.getX(), color);
+				canvas.setPixel(i + button.getY(), j + button.getX(), color);
 			}
 	return;
 }

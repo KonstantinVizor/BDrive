@@ -1,9 +1,7 @@
 #ifndef __BASECONTROL_H__
 #define __BASECONTROL_H__
 
-#include <functional>
-#include <memory>
-#include <vector>
+#include <cinttypes>
 
 namespace BDrive
 {
@@ -11,8 +9,6 @@ namespace BDrive
 
 namespace VisualControls
 {
-	using ControlHandler = std::function<void(std::vector<std::shared_ptr<ScreenLayer>>&,
-						std::vector<std::shared_ptr<ScreenLayer>>&)>;
 	enum ControlType
 	{
 		BUTTON

@@ -46,6 +46,12 @@ uint32_t BDrive::ScreenLayer::getControlsCount() const
 	return _controls.size();
 }
 
+BDrive::ScreenLayer& BDrive::ScreenLayer::setIsShowed(bool isShowed)
+{
+	_isShowed = isShowed;
+	return *this;
+}
+
 BDrive::ScreenLayer& BDrive::ScreenLayer::setWidth(uint16_t width)
 {
 	_width = width;
@@ -88,6 +94,11 @@ uint16_t BDrive::ScreenLayer::getXpos() const
 uint16_t BDrive::ScreenLayer::getYpos() const
 {
 	return _ypos;
+}
+
+bool BDrive::ScreenLayer::isShowed() const
+{
+	return _isShowed;
 }
 
 const BDrive::ScreenLayer& BDrive::ScreenLayer::operator =(const ScreenLayer &layer)
