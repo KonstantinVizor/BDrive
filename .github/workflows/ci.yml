@@ -12,7 +12,7 @@ jobs:
       
       - name: Install packages
         run: |
-          sudo apt install -y make cmake gcc doxygen
+          sudo apt install -y make cmake gcc doxygen ffmpeg
 
       - name: Build
         run: |
