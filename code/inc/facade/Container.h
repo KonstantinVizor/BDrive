@@ -53,22 +53,22 @@ namespace BDrive
 
 			/*! \details
 			 * Добавляет в очередь событие
-			 * \rapam event Событие
+			 * \param event Событие
 			 * \return Ссылку на себя
 			 */
 			Container& addEvent(const std::shared_ptr<Events::BaseEvent> &event);
 
 			/*! \details
 			 * Добавляет в массив слой
-			 * \rapam layer Слой 
+			 * \param layer Слой 
 			 * \return Ссылку на себя
 			 */
 			Container& addLayer(const ScreenLayer &layer);
 
 			/*! \details
 			 * Добавляет новый обработчик события
-			 * \rapam type Тип события
-			 * \rapam handler Обработчик события
+			 * \param type Тип события
+			 * \param handler Обработчик события
 			 * \return Ссылку на себя
 			 */
 			Container& addHandler(Events::EventType type,
@@ -76,8 +76,8 @@ namespace BDrive
 
 			/*! \details
 			 * Добавляет новый рендер
-			 * \rapam type Типа контрола
-			 * \rapam render Рендер
+			 * \param type Типа контрола
+			 * \param render Рендер
 			 * \return Ссылку на себя
 			 */
 			Container& addRender(VisualControls::ControlType type,
@@ -85,7 +85,7 @@ namespace BDrive
 
 			/*! \details
 			 * Устанавливает указатель на себя
-			 * \rapam container Указатель на себя
+			 * \param container Указатель на себя
 			 * \return Ссылку на себя
 			 */
 			Container& setContainer(const std::shared_ptr<Container> &container);

@@ -27,15 +27,15 @@ namespace BDrive
 			
 			/*! \details
 			 * Устанавливает контейнер
-			 * \rapam container контейнер
+			 * \param container контейнер
 			 * \return Ссылку на себя
 			 */
 			EventManager&& setContainer(const std::shared_ptr<Container> &container);
 
 			/*! \details
 			 * Добавляет новый обработчик события
-			 * \rapam type Тип события
-			 * \rapam handler Обработчик события
+			 * \param type Тип события
+			 * \param handler Обработчик события
 			 * \return Ссылку на себя
 			 */
 			EventManager&& addHandler(Events::EventType type,

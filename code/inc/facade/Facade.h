@@ -20,15 +20,15 @@ namespace BDrive
 
 			/*! \details
 			 * Добавляет в массив слой
-			 * \rapam layer Слой 
+			 * \param layer Слой 
 			 * \return Ссылку на себя
 			 */
 			Facade& addLayer(const ScreenLayer &layer);
 
 			/*! \details
 			 * Добавляет новый обработчик события
-			 * \rapam type Тип события
-			 * \rapam handler Обработчик события
+			 * \param type Тип события
+			 * \param handler Обработчик события
 			 * \return Ссылку на себя
 			 */
 			Facade& addHandler(Events::EventType type,
@@ -36,8 +36,8 @@ namespace BDrive
 
 			/*! \details
 			 * Добавляет новый рендер
-			 * \rapam type Типа контрола
-			 * \rapam render Рендер
+			 * \param type Типа контрола
+			 * \param render Рендер
 			 * \return Ссылку на себя
 			 */
 			Facade& addRender(VisualControls::ControlType type,

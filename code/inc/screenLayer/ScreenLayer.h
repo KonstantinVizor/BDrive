@@ -30,7 +30,7 @@ namespace BDrive
 
 			/*! \details
 			 * Добавляет контрол в список
-			 * \rapam control Контрол для добавления
+			 * \param control Контрол для добавления
 			 * \result Ссылку на себя
 			 */
 			ScreenLayer& addControl(const std::shared_ptr<VisualControls::BaseControl> &control);

@@ -1,1 +1,5 @@
-add_library(eventHandler SHARED  ./BaseEventHandler.cpp ./KeyPressEventHandler.cpp ./MouseClickEventHandler.cpp ./TickEventHandler.cpp)
+list(APPEND SOURCES ${CMAKE_SOURCE_DIR}/code/src/eventHandler/BaseEventHandler.cpp)
+list(APPEND SOURCES ${CMAKE_SOURCE_DIR}/code/src/eventHandler/KeyPressEventHandler.cpp)
+list(APPEND SOURCES ${CMAKE_SOURCE_DIR}/code/src/eventHandler/MouseClickEventHandler.cpp)
+list(APPEND SOURCES ${CMAKE_SOURCE_DIR}/code/src/eventHandler/TickEventHandler.cpp)
+set(SOURCES "${SOURCES}" PARENT_SCOPE)

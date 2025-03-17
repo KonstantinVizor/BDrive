@@ -24,15 +24,15 @@ namespace BDrive
 
 			/*! \details
 			 * Устанавливает контейнер
-			 * \rapam container контейнер
+			 * \param container контейнер
 			 * \return Ссылку на себя
 			 */
 			RenderManager&& setContainer(const std::shared_ptr<Container> &container);
 
 			/*! \details
 			 * Добавляет новый рендер
-			 * \rapam type Типа контрола
-			 * \rapam render Рендер
+			 * \param type Типа контрола
+			 * \param render Рендер
 			 * \return Ссылку на себя
 			 */
 			RenderManager&& addRender(VisualControls::ControlType type,
