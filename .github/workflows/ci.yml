@@ -1,0 +1,31 @@
+name: CI/CD
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install packages
+        run: |
+          sudo apt install make cmake gcc doxygen
+
+      - name: Build
+        run: |
+          ./build.sh
+          if [[ 0 == $? ]]
+          then
+            echo "TESTS_STATUS=success" >> $GITHUB_ENV
+          else
+            echo "TESTS_STATUS=failed" >> $GITHUB_ENV
+          fi
+
+      - name: Testing
+        run: |
+          cd ./build
+          ctest
+          if [[ 0 == $? ]]
+          then
+            echo "TESTS_STATUS=success" >> $GITHUB_ENV
+          else
+            echo "TESTS_STATUS=failed" >> $GITHUB_ENV
+          fi
